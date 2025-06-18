@@ -9,7 +9,7 @@ android {
     namespace = "com.abinantony.instagram.instagram"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
-
+    compileSdk 35
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

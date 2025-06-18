@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CreatePostScreen extends StatefulWidget {
-  const CreatePostScreen({super.key});
+  final VoidCallback onPostShared;
+
+  const CreatePostScreen({super.key, required this.onPostShared});
 
   @override
   State<CreatePostScreen> createState() => _CreatePostScreenState();
@@ -21,10 +23,8 @@ class _CreatePostScreenState extends State<CreatePostScreen> {
       });
     }
   }
-
   void _sharePost() {
-    // Normally you'd upload the image and save post data to backend
-    Navigator.pop(context); // Simulate posting by returning to feed/home
+    widget.onPostShared();
   }
 
   @override
