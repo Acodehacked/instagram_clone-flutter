@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/utils/Permissions.dart';
 import 'feed_screen.dart';
 import 'profile_screen.dart';
 import 'create_post_screen.dart';
@@ -14,6 +15,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    checkPermissions(); // Call here
+  }
   List<Widget> get _screens => [
     const FeedScreen(),
     const ExploreScreen(),
